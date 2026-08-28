@@ -1,0 +1,43 @@
+{
+  "audit_date": "2026-08-28",
+  "status": "audited_tranche",
+  "emdat_used": false,
+  "events": [
+    {
+      "event_id": "GDA-EQ-2010-HTI",
+      "observations": [
+        {"field":"deaths","value":158679,"unit":"persons","status":"estimated","definition":"fatalities; USGS landslide-map publication describes this as the most reliable survey estimate","source":"USGS","source_url":"https://www.usgs.gov/maps/map-landslides-triggered-january-12-2010-haiti-earthquake"},
+        {"field":"injured","value":300000,"unit":"persons","status":"estimated","definition":"more than 300,000 injuries","source":"USGS","source_url":"https://www.usgs.gov/maps/map-landslides-triggered-january-12-2010-haiti-earthquake"},
+        {"field":"deaths","value":300000,"unit":"persons","status":"estimated","definition":"estimated deaths in USGS overview publication","source":"USGS","source_url":"https://www.usgs.gov/publications/overview-2010-haiti-earthquake"},
+        {"field":"displaced","value":1000000,"unit":"persons","status":"reported","definition":"more than one million displaced in USGS overview","source":"USGS","source_url":"https://www.usgs.gov/publications/overview-2010-haiti-earthquake"}
+      ]
+    },
+    {
+      "event_id": "GDA-TS-2004-IO",
+      "observations": [
+        {"field":"deaths","value":227898,"unit":"persons","status":"reported","definition":"dead or missing","source":"NOAA/NCEI","source_url":"https://www.ncei.noaa.gov/products/natural-hazards/tsunamis-earthquakes-volcanoes/tsunamis/recent-significant-events"},
+        {"field":"deaths","value":227899,"unit":"persons","status":"reported","definition":"killed or missing/presumed dead","source":"NOAA/NCEI","source_url":"https://www.ncei.noaa.gov/products/natural-hazards/tsunamis-earthquakes-volcanoes/tsunamis/global-historical-data"},
+        {"field":"displaced","value":1126900,"unit":"persons","status":"reported","definition":"displaced by earthquake and subsequent tsunami in NOAA historical overview","source":"NOAA/NCEI","source_url":"https://www.ncei.noaa.gov/products/natural-hazards/tsunamis-earthquakes-volcanoes/tsunamis/global-historical-data"},
+        {"field":"displaced","value":1700000,"unit":"persons","status":"approximate","definition":"approximately displaced by earthquake and subsequent tsunami in NOAA/ITIC poster","source":"NOAA/NCEI","source_url":"https://www.ncei.noaa.gov/sites/default/files/2024-11/IO_Poster_20241030_final_lowres.pdf"},
+        {"field":"economic_loss","value":10000000000,"unit":"USD","status":"estimated","definition":"estimated material losses in Indian Ocean region","source":"NOAA/NCEI","source_url":"https://www.ncei.noaa.gov/products/natural-hazards/tsunamis-earthquakes-volcanoes/tsunamis/recent-significant-events"}
+      ]
+    },
+    {
+      "event_id": "GDA-TS-1960-CHL",
+      "observations": [
+        {"field":"deaths","min":490,"max":5700,"unit":"persons","status":"estimated","definition":"deaths associated with earthquake and tsunami; range explicitly stated by NOAA","source":"NOAA/NCEI","source_url":"https://www.ncei.noaa.gov/news/day-1960-chilean-earthquake-and-tsunami"}
+      ]
+    },
+    {
+      "event_id": "GDA-FL-2022-PAK",
+      "observations": [
+        {"field":"deaths","value":1730,"unit":"persons","status":"reported","definition":"more than 1,730 lost their lives at assessment date","source":"World Bank-led PDNA","source_url":"https://www.worldbank.org/en/news/press-release/2022/10/28/pakistan-damages-and-economic-losses"},
+        {"field":"affected","value":33000000,"unit":"persons","status":"reported","definition":"people affected","source":"World Bank-led PDNA","source_url":"https://www.worldbank.org/en/news/press-release/2022/10/28/pakistan-damages-and-economic-losses"},
+        {"field":"displaced","value":8000000,"unit":"persons","status":"reported","definition":"more than 8 million displaced at assessment date","source":"World Bank-led PDNA","source_url":"https://www.worldbank.org/en/news/press-release/2022/10/28/pakistan-damages-and-economic-losses"},
+        {"field":"economic_damage","value":14900000000,"unit":"USD","status":"estimated","definition":"total physical damage","source":"World Bank-led PDNA","source_url":"https://thedocs.worldbank.org/en/doc/4a0114eb7d1cecbbbf2f65c5ce0789db-0310012022/original/Pakistan-Floods-2022-PDNA-Main-Report.pdf"},
+        {"field":"economic_loss","value":15200000000,"unit":"USD","status":"estimated","definition":"economic losses / changes in economic flows","source":"World Bank-led PDNA","source_url":"https://thedocs.worldbank.org/en/doc/4a0114eb7d1cecbbbf2f65c5ce0789db-0310012022/original/Pakistan-Floods-2022-PDNA-Main-Report.pdf"},
+        {"field":"reconstruction_needs","value":16300000000,"unit":"USD","status":"estimated","definition":"rehabilitation and reconstruction needs","source":"World Bank-led PDNA","source_url":"https://thedocs.worldbank.org/en/doc/4a0114eb7d1cecbbbf2f65c5ce0789db-0310012022/original/Pakistan-Floods-2022-PDNA-Main-Report.pdf"}
+      ]
+    }
+  ]
+}
