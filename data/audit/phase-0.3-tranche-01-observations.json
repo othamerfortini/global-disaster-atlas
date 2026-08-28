@@ -1,0 +1,55 @@
+{
+  "audit_date":"2026-08-28",
+  "status":"audited_tranche",
+  "method":"Values are transcribed from cited official/primary sources; conflicting definitions or ranges are preserved as separate observations.",
+  "events":[
+    {"event_id":"GDA-EQ-2010-HTI","name":"2010 Haiti earthquake","observations":[
+      {"field":"deaths","value":158679,"unit":"persons","status":"estimated","source":"USGS","source_url":"https://www.usgs.gov/publications/overview-2010-haiti-earthquake","definition":"USGS overview figure; estimate cited in source"},
+      {"field":"injured","value":300000,"unit":"persons","status":"reported","source":"USGS","source_url":"https://www.usgs.gov/publications/overview-2010-haiti-earthquake","definition":"reported injured"},
+      {"field":"displaced","value":1000000,"unit":"persons","status":"reported","source":"USGS","source_url":"https://www.usgs.gov/publications/overview-2010-haiti-earthquake","definition":"reported displaced"}
+    ]},
+    {"event_id":"GDA-EQ-2011-JPN","name":"2011 Tohoku earthquake","observations":[
+      {"field":"deaths","value":15901,"unit":"persons","status":"reported","source":"NOAA/NCEI","source_url":"https://www.ncei.noaa.gov/news/day-2011-japan-earthquake-and-tsunami","definition":"dead; tsunami-related event page"},
+      {"field":"injured","value":6152,"unit":"persons","status":"reported","source":"NOAA/NCEI","source_url":"https://www.ncei.noaa.gov/news/day-2011-japan-earthquake-and-tsunami","definition":"injured"},
+      {"field":"missing","value":2519,"unit":"persons","status":"reported","source":"NOAA/NCEI","source_url":"https://www.ncei.noaa.gov/news/day-2011-japan-earthquake-and-tsunami","definition":"missing"}
+    ]},
+    {"event_id":"GDA-EQ-2015-NPL","name":"2015 Nepal earthquake","observations":[
+      {"field":"deaths","value":9000,"unit":"persons","status":"estimated","source":"USGS","source_url":"https://www.usgs.gov/programs/earthquake-hazards/science/m78-nepal-earthquake-2015-a-small-push-mt-everest","definition":"about 9000 fatalities"},
+      {"field":"injured","value":23000,"unit":"persons","status":"estimated","source":"USGS","source_url":"https://www.usgs.gov/programs/earthquake-hazards/science/m78-nepal-earthquake-2015-a-small-push-mt-everest","definition":"about 23000 injuries"},
+      {"field":"houses_destroyed","value":500717,"unit":"houses","status":"reported","source":"USGS","source_url":"https://www.usgs.gov/programs/earthquake-hazards/science/m78-nepal-earthquake-2015-a-small-push-mt-everest","definition":"Nepal houses destroyed"},
+      {"field":"houses_damaged","value":269190,"unit":"houses","status":"reported","source":"USGS","source_url":"https://www.usgs.gov/programs/earthquake-hazards/science/m78-nepal-earthquake-2015-a-small-push-mt-everest","definition":"Nepal houses damaged"}
+    ]},
+    {"event_id":"GDA-EQ-2004-IDN","name":"2004 Sumatra-Andaman earthquake / Indian Ocean tsunami","observations":[
+      {"field":"deaths_or_missing","value":227899,"unit":"persons","status":"reported","source":"NOAA/NCEI","source_url":"https://www.ncei.noaa.gov/products/natural-hazards/tsunamis-earthquakes-volcanoes/tsunamis/global-historical-data","definition":"killed or listed as missing and presumed dead; generating earthquake and subsequent tsunami combined"},
+      {"field":"displaced","value":1126900,"unit":"persons","status":"reported","source":"NOAA/NCEI","source_url":"https://www.ncei.noaa.gov/products/natural-hazards/tsunamis-earthquakes-volcanoes/tsunamis/global-historical-data","definition":"displaced by earthquake and subsequent tsunami"}
+    ]},
+    {"event_id":"GDA-EQ-2010-CHL","name":"2010 Maule earthquake and tsunami","observations":[
+      {"field":"deaths","value":521,"unit":"persons","status":"reported","source":"USGS","source_url":"https://www.usgs.gov/publications/report-2010-chilean-earthquake-and-tsunami-response","definition":"confirmed fatalities"},
+      {"field":"missing","value":56,"unit":"persons","status":"reported","source":"USGS","source_url":"https://www.usgs.gov/publications/report-2010-chilean-earthquake-and-tsunami-response","definition":"missing and presumed dead in tsunami"},
+      {"field":"affected_exposed","value":12000000,"unit":"persons","status":"reported","source":"USGS","source_url":"https://www.usgs.gov/publications/report-2010-chilean-earthquake-and-tsunami-response","definition":"people in areas that felt strong shaking; NOT equivalent to affected population"},
+      {"field":"economic_loss","value":30000000000,"unit":"USD","status":"reported","source":"USGS","source_url":"https://www.usgs.gov/publications/report-2010-chilean-earthquake-and-tsunami-response","definition":"economic losses"}
+    ]},
+    {"event_id":"GDA-FL-2010-PAK","name":"2010 Pakistan floods","observations":[
+      {"field":"deaths","value":1980,"unit":"persons","status":"reported","source":"World Bank","source_url":"https://documents1.worldbank.org/curated/en/727511468064428943/pdf/593110PJPR0P1251050IDA1R20111008711.pdf","definition":"reported deaths"},
+      {"field":"injured","value":2946,"unit":"persons","status":"reported","source":"World Bank","source_url":"https://documents1.worldbank.org/curated/en/727511468064428943/pdf/593110PJPR0P1251050IDA1R20111008711.pdf","definition":"reported injured"},
+      {"field":"affected","value":20000000,"unit":"persons","status":"reported","source":"World Bank","source_url":"https://documents1.worldbank.org/curated/en/727511468064428943/pdf/593110PJPR0P1251050IDA1R20111008711.pdf","definition":"more than 20 million affected"},
+      {"field":"economic_loss","value":10000000000,"unit":"USD","status":"estimated","source":"World Bank","source_url":"https://documents1.worldbank.org/curated/en/676321468057882381/pdf/582900BR0OM2011e0only1910BOX353794B.pdf","definition":"direct and indirect damages/losses approximately USD 10 billion; definition differs from later assessments"}
+    ]},
+    {"event_id":"GDA-FL-2022-PAK","name":"2022 Pakistan floods","observations":[
+      {"field":"deaths","value":1730,"unit":"persons","status":"reported","source":"World Bank","source_url":"https://www.worldbank.org/en/news/press-release/2022/10/28/pakistan-flood-damages-and-economic-losses-over-usd-30-billion-and-reconstruction-needs-over-usd-16-billion-new-assessme","definition":"more than 1730 lives lost"},
+      {"field":"affected","value":33000000,"unit":"persons","status":"reported","source":"World Bank","source_url":"https://www.worldbank.org/en/news/press-release/2022/10/28/pakistan-flood-damages-and-economic-losses-over-usd-30-billion-and-reconstruction-needs-over-usd-16-billion-new-assessme","definition":"affected population"},
+      {"field":"displaced","value":8000000,"unit":"persons","status":"reported","source":"World Bank","source_url":"https://www.worldbank.org/en/news/press-release/2022/10/28/pakistan-flood-damages-and-economic-losses-over-usd-30-billion-and-reconstruction-needs-over-usd-16-billion-new-assessme","definition":"displaced people"},
+      {"field":"economic_damage","value":14900000000,"unit":"USD","status":"estimated","source":"World Bank/PDNA","source_url":"https://www.worldbank.org/en/news/press-release/2022/10/28/pakistan-flood-damages-and-economic-losses-over-usd-30-billion-and-reconstruction-needs-over-usd-16-billion-new-assessme","definition":"total physical/economic damages"},
+      {"field":"economic_loss","value":15200000000,"unit":"USD","status":"estimated","source":"World Bank/PDNA","source_url":"https://www.worldbank.org/en/news/press-release/2022/10/28/pakistan-flood-damages-and-economic-losses-over-usd-30-billion-and-reconstruction-needs-over-usd-16-billion-new-assessme","definition":"economic losses"},
+      {"field":"reconstruction_needs","value":16300000000,"unit":"USD","status":"estimated","source":"World Bank/PDNA","source_url":"https://www.worldbank.org/en/news/press-release/2022/10/28/pakistan-flood-damages-and-economic-losses-over-usd-30-billion-and-reconstruction-needs-over-usd-16-billion-new-assessme","definition":"rehabilitation and resilient reconstruction needs"}
+    ]},
+    {"event_id":"GDA-TS-1960-CHL","name":"1960 Chilean earthquake and tsunami","observations":[
+      {"field":"deaths","value_min":490,"value_max":5700,"unit":"persons","status":"estimated","source":"NOAA/NCEI","source_url":"https://www.ncei.noaa.gov/news/day-1960-chilean-earthquake-and-tsunami","definition":"fatalities associated with earthquake and tsunami"},
+      {"field":"injured","value":3000,"unit":"persons","status":"reported","source":"NOAA/NCEI","source_url":"https://www.ncei.noaa.gov/products/natural-hazards/tsunamis-earthquakes-volcanoes/tsunamis/travel-time-maps","definition":"reported injured in Chile"},
+      {"field":"missing","value":717,"unit":"persons","status":"reported","source":"NOAA/NCEI","source_url":"https://www.ncei.noaa.gov/products/natural-hazards/tsunamis-earthquakes-volcanoes/tsunamis/travel-time-maps","definition":"initially missing in Chile"},
+      {"field":"displaced_or_homeless","value":2000000,"unit":"persons","status":"estimated","source":"NOAA/NCEI","source_url":"https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.ngdc.mgg.photos:25","definition":"people left homeless"},
+      {"field":"houses_destroyed","value":58622,"unit":"houses","status":"reported","source":"NOAA/NCEI","source_url":"https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.ngdc.mgg.photos:25","definition":"completely destroyed"},
+      {"field":"economic_damage","value":500000000,"unit":"USD","status":"estimated","source":"NOAA/NCEI","source_url":"https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.ngdc.mgg.photos:25","definition":"more than USD 500 million; earthquake and tsunami damage"}
+    ]}
+  ]
+}
