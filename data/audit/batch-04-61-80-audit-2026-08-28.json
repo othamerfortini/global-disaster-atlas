@@ -1,0 +1,12 @@
+{
+  "batch":"04",
+  "range":"61-80",
+  "audit_date":"2026-08-28",
+  "status":"OPEN",
+  "reconstruction_excludes_emdat":true,
+  "closure_rule":"20/20 events must have determined states for all 12 gates; no partial closure. NOT_REPORTED, UNKNOWN, ZERO and CONFLICTING remain distinct.",
+  "source_priority":["official_national_agency","NOAA/NCEI","USGS","GDACS","UN/WB/other intergovernmental primary assessment","peer-reviewed/scientific source"],
+  "events":[
+    {"n":61,"status":"PENDING_AUDIT"},{"n":62,"status":"PENDING_AUDIT"},{"n":63,"status":"PENDING_AUDIT"},{"n":64,"status":"PENDING_AUDIT"},{"n":65,"status":"PENDING_AUDIT"},{"n":66,"status":"PENDING_AUDIT"},{"n":67,"status":"PENDING_AUDIT"},{"n":68,"status":"PENDING_AUDIT"},{"n":69,"status":"PENDING_AUDIT"},{"n":70,"status":"PENDING_AUDIT"},{"n":71,"status":"PENDING_AUDIT"},{"n":72,"status":"PENDING_AUDIT"},{"n":73,"status":"PENDING_AUDIT"},{"n":74,"status":"PENDING_AUDIT"},{"n":75,"status":"PENDING_AUDIT"},{"n":76,"status":"PENDING_AUDIT"},{"n":77,"status":"PENDING_AUDIT"},{"n":78,"status":"PENDING_AUDIT"},{"n":79,"status":"PENDING_AUDIT"},{"n":80,"status":"PENDING_AUDIT"}
+  ]
+}
