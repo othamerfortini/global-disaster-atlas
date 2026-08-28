@@ -1,0 +1,32 @@
+[
+  {
+    "event_id": "GDA-2011-JPN-TOHOKU-EQ",
+    "name": "2011 Tohoku earthquake",
+    "event_class": "natural_hazard",
+    "causal_role": "trigger",
+    "hazard": {"type": "earthquake", "subtype": "megathrust", "natural": true},
+    "secondary_hazards": ["tsunami"],
+    "relationships": [{"type": "triggered", "target_event_id": "GDA-2011-JPN-TOHOKU-TSUNAMI", "confidence": null, "evidence_source_ids": []}],
+    "sources": [{"name": "USGS", "source_event_id": "official200...", "url": "https://earthquake.usgs.gov/", "retrieved_at": null, "license": "dataset-specific/public USGS data terms", "owner": "U.S. Geological Survey"}]
+  },
+  {
+    "event_id": "GDA-2011-JPN-FUKUSHIMA-NUCLEAR",
+    "name": "Fukushima Daiichi nuclear accident",
+    "event_class": "technological",
+    "causal_role": "consequence",
+    "hazard": {"type": "nuclear_accident", "subtype": "reactor_accident", "natural": false},
+    "secondary_hazards": ["radioactive_release", "evacuation"],
+    "relationships": [{"type": "resulted_in", "target_event_id": "GDA-2011-JPN-TOHOKU-TSUNAMI", "confidence": null, "evidence_source_ids": []}],
+    "sources": [{"name": "IAEA", "source_event_id": null, "url": "https://www.iaea.org/", "retrieved_at": null, "license": "verify source-specific terms", "owner": "International Atomic Energy Agency"}]
+  },
+  {
+    "event_id": "GDA-2015-BRA-MARIANA-FUNDAO",
+    "name": "Fundao dam failure / Mariana tailings disaster",
+    "event_class": "infrastructure_failure",
+    "causal_role": "trigger",
+    "hazard": {"type": "dam_failure", "subtype": "tailings_dam_failure", "natural": false},
+    "secondary_hazards": ["tailings_inundation", "river_contamination"],
+    "relationships": [],
+    "sources": [{"name": "Atlas initial case study", "source_event_id": null, "url": null, "retrieved_at": null, "license": null, "owner": null}]
+  }
+]
