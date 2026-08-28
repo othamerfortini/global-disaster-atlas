@@ -1,0 +1,11 @@
+{
+  "date":"2026-08-28",
+  "type":"audit_correction",
+  "batch":"05",
+  "finding":"The previous Batch 05 audit incorrectly concluded that the canonical registry contained only 99 effective records.",
+  "verified_structure":{"registry_entries":101,"excluded_entry":{"id":"GDA-CMP-2022-TON","reason":"duplicate compound representation of Hunga Tonga event"},"effective_evaluation_records":100,"effective_event_100":"GDA-CMP-2023-LBY"},
+  "action":"Corrected the Batch 05 audit file. The canonical registry was not modified.",
+  "integrity_rule":"No invented event was added and no existing event was removed from the canonical registry.",
+  "current_batch_status":"OPEN_PENDING_REMAINING_EVENT_GATES",
+  "correction_commit":"03be0d35a0ffcccbafa5827f1ce59a9be8b6fe85"
+}
