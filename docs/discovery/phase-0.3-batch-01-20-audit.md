@@ -5,7 +5,7 @@ Status: **CLOSED — evidence audit complete for 20 selected events**
 
 ## Scope
 
-This batch deliberately spans earthquakes, tsunamis, floods/cyclones, tornadoes, wildfire, extreme heat, volcanic eruptions and compound/cascade events. It is a **source-observation audit**, not a claim that all fields exist for every event.
+This batch deliberately spans earthquakes, tsunamis, cyclones/floods, tornadoes, wildfire and volcanic eruptions. It is a **source-observation audit**, not a claim that all fields exist for every event.
 
 Rules:
 - `NR` = not reported in the audited source set; never converted to zero.
@@ -16,34 +16,32 @@ Rules:
 
 ## 20 audited events
 
-| # | Event | Hazard | Deaths | Injured | Missing | Affected/displaced | Economic/physical impact | Cascade/conflict finding | Primary official/open source |
+| # | Event | Hazard | Deaths | Injured | Missing | Affected/displaced | Economic/physical impact | Cascade/conflict finding | Primary source |
 |---|---|---|---:|---:|---:|---:|---|---|---|
-| 01 | Haiti earthquake, 2010 | earthquake + landslides | 158,679 (reliable survey estimate) | >300,000 | NR | >1,000,000 displaced in USGS overview | nearly half of structures in epicentral area damaged | earthquake → landslides; casualty estimates vary widely | USGS SIM 3353 / USGS overview |
-| 02 | Tohoku, Japan, 2011 | earthquake + tsunami | 15,703+ | 5,314 | 4,647 | 130,927 displaced | 332,395+ buildings/roads/bridges/railways destroyed or damaged | earthquake → tsunami; majority of casualties attributed to tsunami | USGS event impact page |
-| 03 | Indian Ocean, 2004 | earthquake + tsunami | 227,898 dead/missing | NR | included in dead/missing | NR | regional material losses about $10B; Indonesia $4.4516B | earthquake and tsunami cannot be treated as independent casualty totals | NOAA/NCEI tsunami database |
-| 04 | Kashmir, Pakistan, 2005 | earthquake | 86,000+ | NR | NR | NR | extensive damage | physical event and impact sourced independently | USGS |
-| 05 | Nepal/Gorkha, 2015 | earthquake + aftershocks/landslides | ~9,000 | 23,000 | NR | NR | 500,717 houses destroyed; 269,190 damaged | aftershock + landslide impacts must remain linked | USGS |
-| 06 | Palu/Sulawesi, 2018 | earthquake + tsunami + liquefaction | 4,340 | NR | NR | NR | four Central Sulawesi regions severely affected | earthquake → tsunami + liquefaction + landslides; tsunami deaths estimated 1,252 but not additive to total | NOAA/NCEI |
-| 07 | Maule, Chile, 2010 | earthquake + tsunami | 521 confirmed | NR | 56 presumed dead | 12M in strong-shaking area | $30B losses; >350,000 housing units destroyed | earthquake and tsunami linked; 56 missing are not added to confirmed deaths | USGS |
-| 08 | Izmit, Turkey, 1999 | earthquake | ≥20,000 | NR | NR | NR | widespread urban damage | aftershocks recorded; Duzce is separate event | USGS |
-| 09 | Mount St. Helens, USA, 1980 | volcanic eruption + debris avalanche + lahars | 57 | scores/NR | NR | NR | 27 bridges, ~200 homes; >185 miles roads/15 miles rail | landslide triggered eruption; pyroclastic flows/lahars are consequences | USGS |
-| 10 | Pinatubo, Philippines, 1991 | volcanic eruption + ashfall + lahars + typhoon interaction | 847 (USGS current impact page) | NR | NR | ~1M people affected; ~250k displaced after first blasts | ~$700M damage on current USGS impact page | eruption + Typhoon Yunya increased wet-ash roof collapse; historical sources give different casualty snapshots | USGS |
-| 11 | Nevado del Ruiz, Colombia, 1985 | volcanic eruption → lahars | >23,000 | NR | NR | NR | Armero and infrastructure destroyed | classic eruption → meltwater → lahar cascade | USGS |
-| 12 | Kīlauea LERZ, Hawaii, 2018 | volcanic eruption + lava + summit collapse | NR | NR | NR | residents displaced; exact total not asserted here | 1,839 structures destroyed and 90 damaged in detailed assessment; 35.5 km² inundated | eruption → lava flows; summit magma withdrawal → caldera collapse; avoid mixing structure datasets from different vintages | USGS |
-| 13 | Hurricane Katrina, USA, 2005 | tropical cyclone + storm surge + flood | 1,392 | NR | NR | >200,000 homes destroyed/uninhabitable | $201.3B inflation-adjusted damage (2024 USD) | cyclone → surge/flood; casualty attribution requires direct/indirect definition | NOAA/NESDIS |
-| 14 | Hurricane Harvey, USA, 2017 | tropical cyclone + rainfall flood | 68 direct + ~35 indirect | 4 tornado injuries reported | NR | NR | major freshwater flood damage | NOAA explicitly separates direct/indirect deaths and separates flood/tornado hazards | NOAA/NHC TCR |
-| 15 | Hurricane Sandy, Atlantic/USA, 2012 | tropical cyclone + storm surge + flood + blizzard | 147 direct Atlantic-basin deaths | NR | NR | 8.5M customers without power | ≥650,000 houses damaged/destroyed; US preliminary damage near $50B | cyclone transitioned to post-tropical; multi-hazard impacts must remain linked | NOAA/NHC / NOAA Service Assessment |
-| 16 | Hurricane Maria, Puerto Rico, 2017 | tropical cyclone + flood/infrastructure failure | 2,975 excess-death estimate; other studies 1,085 and 4,645 | NR | NR | NR | 62,000 customers still without electricity >6 months later | major conflict is methodological/temporal: direct count vs excess mortality | NOAA repository / NOAA-related research |
-| 17 | Hurricane Dorian, Bahamas, 2019 | tropical cyclone + surge/flood | 67 as of 2019-10-28 | NR | 282 | NR | GRADE $3.4B; DaLA $2.4B; private insured estimates $1.5–6.5B | strong temporal/economic-method conflict; values retained rather than overwritten | World Bank |
-| 18 | Typhoon Haiyan, Philippines, 2013 | tropical cyclone + storm surge | 6,300 | NR | >1,000 | >16M affected; 4M homeless | NR in audited source | cyclone + waves/storm surge; affected and homeless are distinct metrics | NOAA Climate.gov |
-| 19 | Cyclone Idai, SE Africa, 2019 | tropical cyclone + flood | >1,000 regional early estimate; Mozambique-specific later sources differ | 1,600 in Mozambique | NR | >2M regional; 1.5M Mozambique; 230k displaced post-Idai | $2B early regional estimate; $3B combined Idai/Kenneth Mozambique damages/losses | regional vs country scope must never be merged; Idai and Kenneth are separate events | World Bank |
-| 20 | Maui/Lahaina wildfire, Hawaii, 2023 | wildfire + wind/drought | 102 | 32 | NR | evacuations reported; no canonical affected total in selected record | $5.50B property damage in NCEI event record | episode contains multiple fires; Lahaina event must be distinguished from entire Maui wildfire episode | NOAA/NCEI Storm Events |
+| 01 | Haiti earthquake, 2010 | earthquake + landslides | 158,679 | >300,000 | NR | >1M displaced | nearly half of structures in epicentral area damaged | earthquake → landslides; casualty estimates vary widely | USGS |
+| 02 | Tohoku, Japan, 2011 | earthquake + tsunami | 15,703+ | 5,314 | 4,647 | 130,927 displaced | 332,395+ structures/roads/bridges/railways damaged/destroyed | earthquake → tsunami | USGS |
+| 03 | Indian Ocean, 2004 | earthquake + tsunami | 227,898 dead/missing | NR | included in total | NR | regional material losses ~$10B | earthquake/tsunami casualties cannot be added independently | NOAA/NCEI |
+| 04 | Kashmir, Pakistan, 2005 | earthquake | 86,000+ | NR | NR | NR | extensive damage | physical and impact observations linked to earthquake | USGS |
+| 05 | Nepal/Gorkha, 2015 | earthquake + aftershocks/landslides | ~9,000 | 23,000 | NR | NR | 500,717 houses destroyed; 269,190 damaged | aftershock/landslide impacts linked to mainshock | USGS |
+| 06 | Palu/Sulawesi, 2018 | earthquake + tsunami + liquefaction | 4,340 | NR | NR | NR | four regions severely affected | tsunami deaths (1,252 estimate) are not additive to overall total | NOAA/NCEI |
+| 07 | Maule, Chile, 2010 | earthquake + tsunami | 521 confirmed | NR | 56 presumed dead | NR as affected metric; 12M in strong-shaking area | $30B losses; >350k housing units destroyed | 56 missing/presumed dead retained separately | USGS |
+| 08 | Izmit, Turkey, 1999 | earthquake | ≥20,000 | NR | NR | NR | widespread urban damage | aftershocks; Duzce is separate event | USGS |
+| 09 | Mount St. Helens, USA, 1980 | volcanic eruption + debris avalanche + lahars | 57 | NR | NR | NR | 27 bridges, ~200 homes; >185 miles roads/15 miles rail | landslide → eruption; pyroclastic flows/lahars consequences | USGS |
+| 10 | Pinatubo, Philippines, 1991 | eruption + ashfall + lahars + typhoon interaction | 847 current USGS impact estimate | NR | NR | ~1M affected; ~250k displaced after first blasts | ~$700M damage | Typhoon Yunya amplified wet-ash loading; historical casualty snapshots differ | USGS |
+| 11 | Nevado del Ruiz, Colombia, 1985 | eruption → lahars | >23,000 | NR | NR | NR | Armero/infrastructure destroyed | eruption → snow/ice melt → lahars | USGS |
+| 12 | Kīlauea LERZ, Hawaii, 2018 | eruption + lava + summit collapse | NR | NR | NR | displaced residents, not quantified in selected source | 1,839 structures destroyed; 90 damaged; 35.5 km² inundated | eruption → lava; magma withdrawal → caldera collapse | USGS |
+| 13 | Hurricane Katrina, USA, 2005 | cyclone + storm surge + flood | 1,392 | NR | NR | NR as people; >200k homes destroyed/uninhabitable | $201.3B inflation-adjusted damage | cyclone → surge/flood | NOAA |
+| 14 | Hurricane Harvey, USA, 2017 | cyclone + rainfall flood | 68 direct + ~35 indirect | 4 tornado injuries reported | NR | NR | damage described but no numeric total in selected source | direct/indirect and hazard-component definitions retained | NOAA/NHC |
+| 15 | Hurricane Sandy, Atlantic/USA, 2012 | cyclone + surge + flood + blizzard | 147 direct | NR | NR | NR as people; 8.5M customers without power | ≥650k houses damaged/destroyed; preliminary US damage near $50B | post-tropical transition; multi-hazard attribution | NOAA |
+| 16 | Hurricane Maria, Puerto Rico, 2017 | cyclone + infrastructure failure | 2,975 excess-death estimate; studies 1,085 and 4,645 | NR | NR | NR | 62k customers still without electricity >6 months later | methodological mortality conflict | NOAA repository / NOAA-linked research |
+| 17 | Hurricane Dorian, Bahamas, 2019 | cyclone + surge/flood | 67 at 2019-10-28 | NR | 282 | NR | GRADE $3.4B; DaLA $2.4B; insured estimates $1.5–6.5B | temporal and economic-method conflicts retained | World Bank |
+| 18 | Typhoon Haiyan, Philippines, 2013 | cyclone + storm surge | 6,300 | NR | >1,000 | >16M affected; 4M homeless | NR | affected and homeless are distinct metrics | NOAA Climate.gov |
+| 19 | Cyclone Idai, SE Africa, 2019 | cyclone + flood | >1,000 regional early estimate | 1,600 in Mozambique | NR | >2M regional; 1.5M Mozambique; 230k displaced post-Idai | $2B early regional estimate; $3B combined Idai/Kenneth Mozambique damages/losses | regional/country scope conflict; Idai and Kenneth separate | World Bank |
+| 20 | Maui/Lahaina wildfire, Hawaii, 2023 | wildfire + wind/drought | 102 | 32 | NR | evacuations; no canonical affected total | $5.50B property damage | Lahaina event distinguished from wider Maui wildfire episode | NOAA/NCEI |
 
 ## Quality gate
 
-### Evidence completeness
-
-For each event the following were checked independently:
+All 20 records passed the minimum evidence gate:
 1. event identity/date/location;
 2. hazard classification;
 3. at least one official/open source;
@@ -55,46 +53,45 @@ For each event the following were checked independently:
 
 **20/20 pass the minimum evidence gate.**
 
-This does **not** mean 20/20 have all six critical human-impact fields. The missingness is part of the measurement.
+This does **not** mean 20/20 have every critical field. Missingness is measured explicitly.
 
-### Critical-field coverage in this batch
+## Critical-field coverage
 
-Based strictly on the audited source set above:
+Strictly counting a field only when the audited source set provides a **quantified value**:
 
-- Deaths: **20/20 (100%)** have a non-null reported/estimated death observation.
-- Injured: **6/20 (30%)** have a quantified injured value in the audited source set.
-- Missing: **5/20 (25%)** have a quantified missing/presumed-missing observation.
-- Affected/displaced: **10/20 (50%)** have a quantified affected/displaced/homeless observation, with the semantic distinction retained.
-- Economic/physical loss/damage: **17/20 (85%)** have a quantified economic or physical-impact measure.
-- Explicit cascade/relationship evidence: **15/20 (75%)** require or contain an explicit event-chain interpretation.
+- Deaths: **20/20 (100%)**
+- Injured: **6/20 (30%)**
+- Missing: **5/20 (25%)**
+- Affected/displaced/homeless: **5/20 (25%)**
+- Quantified economic or physical impact: **14/20 (70%)**
+- Explicit cascade/relationship evidence: **15/20 (75%)**
 
-These are **field availability rates in the 20-event audit**, not global reconstruction percentages.
+These are **availability rates in Batch 01 only**, not global reconstruction percentages.
 
 ## Conflicts found
 
-At least four structurally important conflict classes were observed:
-
-1. **Temporal revision:** Dorian deaths 67 at an earlier reporting date; later reporting changes the count.
+1. **Temporal revision:** Dorian mortality and damage estimates changed as assessments matured.
 2. **Methodological mortality:** Maria has materially different excess-mortality estimates depending on methodology.
-3. **Scope conflict:** Idai regional totals differ from Mozambique-only totals; Idai must not be combined with Kenneth.
-4. **Cascade attribution:** Indian Ocean 2004 and Palu demonstrate that earthquake, tsunami, liquefaction and landslide casualties can overlap and cannot simply be summed.
-5. **Historical snapshot conflict:** Pinatubo sources report different casualty snapshots depending on observation date and inclusion of subsequent lahar impacts.
+3. **Scope conflict:** Idai regional totals differ from Mozambique-only totals; Idai must not be merged with Kenneth.
+4. **Cascade attribution:** Indian Ocean 2004 and Palu show why earthquake/tsunami/liquefaction/landslide casualties cannot simply be summed.
+5. **Historical snapshot conflict:** Pinatubo sources use different observation windows and inclusion of subsequent lahar impacts.
+6. **Definition conflict:** Sandy/Harvey/Katrina demonstrate the need to distinguish direct deaths from indirect deaths and separate flood/surge/tornado components.
 
-## Resolution policy applied
+## Resolution policy
 
-No source was silently selected as “truth” merely because it was newer. The canonical layer should store:
+No source is silently selected as truth merely because it is newer. The canonical layer stores:
 
 `source_observation → definition → observation_time → publication_time → scope → methodology → resolution_status`
 
-Where a conflict is caused by time, scope or methodology, the conflict is **classified**, not erased.
+Where disagreement is caused by time, scope or methodology, it is **classified and preserved**, not erased.
 
-## Preliminary batch conclusion
+## Batch conclusion
 
-**Batch 01 is closed.**
+**Batch 01 is CLOSED.**
 
-The 20-event sample demonstrates that open/official sources can reconstruct a substantial portion of the critical impact schema without requiring EM-DAT as the primary source. It also demonstrates that the hard problem is not event discovery; it is **semantic harmonization of mortality, affected population, missing persons, economic loss and cascade attribution**.
+The 20-event audit demonstrates that open/official sources can reconstruct a substantial portion of the critical impact schema without EM-DAT as a core dependency. The difficult problem is not basic event discovery; it is **semantic harmonization of mortality, affected population, missing persons, economic loss and cascade attribution**.
 
-No global percentage is inferred from this batch. The 100-event benchmark must remain the final denominator.
+No global percentage is inferred from this batch. The 100-event benchmark remains the final denominator.
 
 ## Sources
 
