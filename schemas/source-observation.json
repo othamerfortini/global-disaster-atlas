@@ -1,0 +1,23 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://global-disaster-atlas.org/schemas/source-observation.json",
+  "title":"Global Disaster Atlas Source Observation",
+  "type":"object",
+  "required":["observation_id","source","observed_field","value","retrieved_at"],
+  "properties":{
+    "observation_id":{"type":"string"},
+    "source":{"type":"string"},
+    "source_event_id":{"type":["string","null"]},
+    "source_url":{"type":["string","null"],"format":"uri"},
+    "observed_field":{"type":"string"},
+    "value":{},
+    "unit":{"type":["string","null"]},
+    "definition":{"type":["string","null"]},
+    "status":{"enum":["reported","estimated","modeled","unknown"]},
+    "observed_at":{"type":["string","null"],"format":"date-time"},
+    "retrieved_at":{"type":"string","format":"date-time"},
+    "license":{"type":["string","null"]},
+    "notes":{"type":["string","null"]}
+  },
+  "additionalProperties":false
+}
