@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://global-disaster-atlas.org/schemas/evidence-record.json",
+  "title": "Global Disaster Atlas Evidence Record",
+  "type": "object",
+  "required": ["observation_id", "event_id", "field", "raw_value", "source", "audit_state"],
+  "properties": {
+    "observation_id": {"type": "string"},
+    "event_id": {"type": "string"},
+    "field": {"type": "string"},
+    "raw_value": {},
+    "normalized_value": {},
+    "unit": {"type": ["string", "null"]},
+    "definition": {"type": ["string", "null"]},
+    "status": {"enum": ["reported", "estimated", "modeled", "unknown"]},
+    "source": {
+      "type": "object",
+      "required": ["source_id", "publisher"],
+      "properties": {
+        "source_id": {"type": "string"},
+        "publisher": {"type": "string"},
+        "dataset": {"type": ["string", "null"]},
+        "record_id": {"type": ["string", "null"]},
+        "url": {"type": ["string", "null"], "format": "uri"},
+        "license_status": {"type": ["string", "null"]},
+        "retrieved_at": {"type": ["string", "null"], "format": "date-time"}
+      },
+      "additionalProperties": false
+    },
+    "conflict_id": {"type": ["string", "null"]},
+    "resolution_id": {"type": ["string", "null"]},
+    "audit_state": {"enum": ["DRAFT", "SOURCE_VERIFIED", "AUDITED", "AUDIT_EXCEPTION"]},
+    "audit_notes": {"type": ["string", "null"]}
+  },
+  "additionalProperties": false
+}
