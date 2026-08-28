@@ -1,124 +1,29 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://global-disaster-atlas.org/schemas/canonical-event.json",
-  "title": "Global Disaster Atlas Canonical Event",
-  "type": "object",
-  "required": ["event_id", "name", "event_class", "hazard", "time", "location", "sources"],
-  "properties": {
-    "event_id": {"type": "string"},
-    "name": {"type": "string"},
-    "event_class": {"enum": ["natural_hazard", "technological", "infrastructure_failure", "environmental", "biological", "social", "compound", "unknown"]},
-    "causal_role": {"enum": ["trigger", "primary", "secondary", "consequence", "co_occurring", "unknown"]},
-    "hazard": {
-      "type": "object",
-      "required": ["type"],
-      "properties": {
-        "type": {"type": "string"},
-        "subtype": {"type": ["string", "null"]},
-        "natural": {"type": ["boolean", "null"]}
-      },
-      "additionalProperties": false
-    },
-    "secondary_hazards": {"type": "array", "items": {"type": "string"}},
-    "time": {
-      "type": "object",
-      "required": ["start", "precision"],
-      "properties": {
-        "start": {"type": ["string", "null"], "format": "date-time"},
-        "end": {"type": ["string", "null"], "format": "date-time"},
-        "precision": {"enum": ["exact", "day", "month", "year", "decade", "century", "approximate", "unknown"]}
-      },
-      "additionalProperties": false
-    },
-    "location": {
-      "type": "object",
-      "properties": {
-        "latitude": {"type": ["number", "null"], "minimum": -90, "maximum": 90},
-        "longitude": {"type": ["number", "null"], "minimum": -180, "maximum": 180},
-        "country": {"type": ["string", "null"]},
-        "region": {"type": ["string", "null"]},
-        "geometry": {"type": ["object", "null"], "description": "GeoJSON geometry for point, track, affected area or other spatial representation."},
-        "spatial_precision": {"enum": ["point", "city", "admin1", "admin2", "country", "regional", "footprint", "unknown"]}
-      },
-      "additionalProperties": false
-    },
-    "physical": {"type": "object"},
-    "impact": {
-      "type": "object",
-      "properties": {
-        "deaths": {"$ref": "#/$defs/range"},
-        "injured": {"$ref": "#/$defs/range"},
-        "missing": {"$ref": "#/$defs/range"},
-        "affected": {"$ref": "#/$defs/range"},
-        "displaced": {"$ref": "#/$defs/range"},
-        "economic_loss": {"$ref": "#/$defs/economicLoss"}
-      },
-      "additionalProperties": true
-    },
-    "confidence": {"type": ["number", "null"], "minimum": 0, "maximum": 100},
-    "sources": {"type": "array", "items": {"$ref": "#/$defs/source"}, "minItems": 1},
-    "relationships": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "required": ["type", "target_event_id"],
-        "properties": {
-          "type": {"enum": ["triggered_by", "triggered", "caused_by", "caused", "contributed_to", "followed_by", "aftershock_of", "part_of", "compound_with", "cascades_to", "resulted_in"]},
-          "target_event_id": {"type": "string"},
-          "confidence": {"type": ["number", "null"], "minimum": 0, "maximum": 100},
-          "evidence_source_ids": {"type": "array", "items": {"type": "string"}}
-        },
-        "additionalProperties": false
-      }
-    },
-    "consequences": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "required": ["type"],
-        "properties": {
-          "type": {"type": "string"},
-          "description": {"type": ["string", "null"]},
-          "event_id": {"type": ["string", "null"]}
-        },
-        "additionalProperties": false
-      }
-    }
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://global-disaster-atlas.org/schemas/canonical-event.json",
+  "title":"Global Disaster Atlas Canonical Event",
+  "type":"object",
+  "required":["event_id","name","event_class","hazard","time","location","sources"],
+  "properties":{
+    "event_id":{"type":"string"},"name":{"type":"string"},
+    "event_class":{"enum":["natural_hazard","technological","infrastructure_failure","environmental","biological","social","compound","unknown"]},
+    "causal_role":{"enum":["trigger","primary","secondary","consequence","co_occurring","unknown"]},
+    "hazard":{"type":"object","required":["type"],"properties":{"type":{"type":"string"},"subtype":{"type":["string","null"]},"natural":{"type":["boolean","null"]}},"additionalProperties":false},
+    "secondary_hazards":{"type":"array","items":{"type":"string"}},
+    "time":{"type":"object","required":["start","precision"],"properties":{"start":{"type":["string","null"],"format":"date-time"},"end":{"type":["string","null"],"format":"date-time"},"precision":{"enum":["exact","day","month","year","decade","century","approximate","unknown"]}},"additionalProperties":false},
+    "location":{"type":"object","properties":{"latitude":{"type":["number","null"],"minimum":-90,"maximum":90},"longitude":{"type":["number","null"],"minimum":-180,"maximum":180},"country":{"type":["string","null"]},"region":{"type":["string","null"]},"geometry":{"type":["object","null"]},"spatial_precision":{"enum":["point","city","admin1","admin2","country","regional","footprint","unknown"]}},"additionalProperties":false},
+    "physical":{"type":"object"},
+    "impact":{"type":"object","properties":{"deaths":{"$ref":"#/$defs/range"},"injured":{"$ref":"#/$defs/range"},"missing":{"$ref":"#/$defs/range"},"affected":{"$ref":"#/$defs/range"},"displaced":{"$ref":"#/$defs/range"},"economic":{"$ref":"#/$defs/economicImpact"}},"additionalProperties":false},
+    "confidence":{"type":["number","null"],"minimum":0,"maximum":100},
+    "sources":{"type":"array","items":{"$ref":"#/$defs/source"},"minItems":1},
+    "relationships":{"type":"array","items":{"type":"object","required":["type","target_event_id"],"properties":{"type":{"enum":["triggered_by","triggered","caused_by","caused","contributed_to","followed_by","aftershock_of","part_of","compound_with","cascades_to","resulted_in"]},"target_event_id":{"type":"string"},"confidence":{"type":["number","null"],"minimum":0,"maximum":100},"evidence_source_ids":{"type":"array","items":{"type":"string"}}},"additionalProperties":false}},
+    "consequences":{"type":"array","items":{"type":"object","required":["type"],"properties":{"type":{"type":"string"},"description":{"type":["string","null"]},"event_id":{"type":["string","null"]}},"additionalProperties":false}}
   },
-  "$defs": {
-    "range": {
-      "type": "object",
-      "properties": {
-        "min": {"type": ["integer", "null"], "minimum": 0},
-        "max": {"type": ["integer", "null"], "minimum": 0},
-        "reported": {"type": ["integer", "null"], "minimum": 0},
-        "status": {"enum": ["reported", "estimated", "modeled", "unknown"]}
-      },
-      "additionalProperties": false
-    },
-    "economicLoss": {
-      "type": "object",
-      "properties": {
-        "amount": {"type": ["number", "null"], "minimum": 0},
-        "currency": {"type": ["string", "null"]},
-        "year": {"type": ["integer", "null"]},
-        "status": {"enum": ["reported", "estimated", "modeled", "unknown"]}
-      },
-      "additionalProperties": false
-    },
-    "source": {
-      "type": "object",
-      "required": ["name"],
-      "properties": {
-        "name": {"type": "string"},
-        "source_event_id": {"type": ["string", "null"]},
-        "url": {"type": ["string", "null"], "format": "uri"},
-        "retrieved_at": {"type": ["string", "null"], "format": "date-time"},
-        "license": {"type": ["string", "null"]},
-        "owner": {"type": ["string", "null"]}
-      },
-      "additionalProperties": false
-    }
+  "$defs":{
+    "range":{"type":"object","properties":{"min":{"type":["integer","null"],"minimum":0},"max":{"type":["integer","null"],"minimum":0},"reported":{"type":["integer","null"],"minimum":0},"status":{"enum":["reported","estimated","modeled","unknown"]}},"additionalProperties":false},
+    "economicImpact":{"type":"object","properties":{"damage":{"$ref":"#/$defs/money"},"loss":{"$ref":"#/$defs/money"},"combined":{"$ref":"#/$defs/money"},"reconstruction_needs":{"$ref":"#/$defs/money"}},"additionalProperties":false},
+    "money":{"type":"object","properties":{"amount":{"type":["number","null"],"minimum":0},"currency":{"type":["string","null"]},"year":{"type":["integer","null"]},"status":{"enum":["reported","estimated","modeled","unknown"]},"definition":{"type":["string","null"]}},"additionalProperties":false},
+    "source":{"type":"object","required":["name"],"properties":{"name":{"type":"string"},"source_event_id":{"type":["string","null"]},"url":{"type":["string","null"],"format":"uri"},"retrieved_at":{"type":["string","null"],"format":"date-time"},"license":{"type":["string","null"]},"owner":{"type":["string","null"]}},"additionalProperties":false}
   },
-  "additionalProperties": false
+  "additionalProperties":false
 }
