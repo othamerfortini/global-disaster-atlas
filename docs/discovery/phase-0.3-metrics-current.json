@@ -1,0 +1,29 @@
+{
+  "scope": "phase-0.3-current-proof-set",
+  "dataset_size": 20,
+  "not_global_estimate": true,
+  "source_families_observed": ["USGS", "NOAA/NCEI", "World Bank", "GDACS"],
+  "source_family_count": 4,
+  "critical_field_coverage": {
+    "deaths": {"covered_events": 15, "total_events": 20, "percentage": 75.0},
+    "injured": {"covered_events": 4, "total_events": 20, "percentage": 20.0},
+    "missing": {"covered_events": 4, "total_events": 20, "percentage": 20.0},
+    "affected": {"covered_events": 4, "total_events": 20, "percentage": 20.0},
+    "displaced": {"covered_events": 3, "total_events": 20, "percentage": 15.0},
+    "economic_impact_canonical": {"covered_events": 0, "total_events": 20, "percentage": 0.0}
+  },
+  "provenance": {
+    "events_with_at_least_one_source": 20,
+    "percentage": 100.0,
+    "critical_value_level_provenance": "not_yet_computed_until_source_observation_layer_is_populated"
+  },
+  "conflict_resolution": {
+    "percentage": null,
+    "reason": "source observations and conflict records are not yet complete enough for a defensible denominator"
+  },
+  "cascade_deduplication": {
+    "status": "required_before_aggregate_impact_statistics",
+    "examples": ["GDA-EQ-2011-JPN -> GDA-TS-2011-JPN", "GDA-EQ-2004-IDN -> GDA-TS-2004-IO"]
+  },
+  "interpretation": "These are measurements of the current 20-event proof set only. They must not be extrapolated to global coverage or to the planned 100-event benchmark."
+}
