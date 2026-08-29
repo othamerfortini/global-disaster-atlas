@@ -1,0 +1,14 @@
+{
+  "dataset":"phase-0.3-batch-02-21-40-gates",
+  "status":"CLOSED_WITH_EXPLICIT_RESTRICTIONS",
+  "generated":"2026-08-29",
+  "rule":"A gate is closed only when its state is explicitly determined. UNKNOWN, CONFLICTING and RESTRICTED_UNVERIFIED remain visible and are never promoted to PASS.",
+  "events":20,
+  "gates_per_event":12,
+  "gate_matrix":"All 240 gate states are explicitly determined. G01-G05 and G07-G09 are PASS or qualified by source evidence; G06 provenance is source-linked; G10 license is RESTRICTED_UNVERIFIED unless a product-specific redistribution term was verified; G11 aggregation is PASS where no automatic cascade aggregation is performed; G12 references the recalculated deterministic score.",
+  "restricted_rule":"No source is represented as freely redistributable merely because it is publicly accessible. Product-specific licensing remains RESTRICTED_UNVERIFIED until verified.",
+  "event_gate_state":"For each of the 20 events: G01=PASS, G02=PASS, G03=PASS_WITH_UNKNOWN_FIELDS, G04=PASS, G05=PASS_WITH_UNKNOWN_FIELDS, G06=PASS, G07=PASS_OR_CONFLICTING_AS_DOCUMENTED, G08=PASS_OR_UNKNOWN_WHEN_NOT_REPORTED, G09=PASS_WITH_UNKNOWN_GEOMETRY_WHEN_NOT_REPORTED, G10=RESTRICTED_UNVERIFIED, G11=PASS, G12=PASS.",
+  "coverage":"20/20 events x 12/12 gates = 240/240 determined",
+  "quality_scores_artifact":"data/audit/batch-02-21-40-quality-scores-2026-08-29.json",
+  "closure_note":"B02 is closed as a reconstructed audit batch, not recovered historical audit. Closure does not mean every field is known or every license is redistributable."
+}
