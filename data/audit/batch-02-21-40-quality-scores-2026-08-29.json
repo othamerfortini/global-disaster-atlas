@@ -1,0 +1,11 @@
+{
+  "dataset":"phase-0.3-batch-02-21-40-quality-scores",
+  "status":"BASELINE_ONLY",
+  "source_artifact":"data/audit/batch-02-21-40-reconstructed-2026-08-29.json",
+  "algorithm":"scripts/quality_score.py",
+  "algorithm_sha":"fed80826a2bf562aa29cddeb5f2014ae3df59759",
+  "scores_calculated":20,
+  "scores":{"GDA-TS-1755-PRT":15,"GDA-TS-1883-IDN":15,"GDA-TS-1946-USA":15,"GDA-TS-1960-CHL":15,"GDA-TS-1964-USA":15,"GDA-TS-1975-USA":15,"GDA-TS-1993-JPN":15,"GDA-TS-2004-IO":25,"GDA-TS-2010-CHL":25,"GDA-TS-2011-JPN":25,"GDA-TS-2018-IDN":25,"GDA-TS-2022-TON":25,"GDA-TS-2025-RUS":25,"GDA-FL-1931-CHN":25,"GDA-FL-1953-NLD":25,"GDA-FL-1998-BGD":25,"GDA-FL-2002-EUR":25,"GDA-FL-2007-BGD":25,"GDA-FL-2010-PAK":25,"GDA-FL-2011-THA":25},
+  "summary":{"minimum":15,"maximum":25,"mean":21.5},
+  "interpretation":"These are reproducible registry-baseline scores. The registry source_plan is materialized as source entries solely to preserve planned provenance; no source_plan item is asserted here to be an independently verified observation. Because time.start, coordinates, spatial precision, impact values and relationships remain unknown in this artifact, those score components receive no credit. These scores must not be substituted for a fully enriched evidence quality score."
+}
