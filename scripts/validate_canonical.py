@@ -83,7 +83,7 @@ def validate_events(events: list[dict]) -> list[str]:
                     elif (
                         isinstance(amount, bool)
                         or not isinstance(amount, (int, float))
-                        or not math.isfinite(amount)
+                        or (isinstance(amount, float) and not math.isfinite(amount))
                         or amount < 0
                     ):
                         errors.append(
