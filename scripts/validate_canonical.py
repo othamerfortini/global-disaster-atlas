@@ -10,6 +10,7 @@ The validator intentionally checks semantics that JSON Schema alone cannot enfor
 from __future__ import annotations
 
 from datetime import datetime
+import math
 
 CRITICAL_IMPACTS = ("deaths", "injured", "missing", "affected", "displaced")
 ECONOMIC_FIELDS = ("damage", "loss", "combined", "reconstruction_needs")
@@ -74,9 +75,19 @@ def validate_events(events: list[dict]) -> list[str]:
                 if isinstance(value, dict) and value.get("status") != "unknown":
                     if not event.get("sources"):
                         errors.append(f"{eid}: economic.{field} has a value but no source")
-                    if value.get("amount") is None:
+                    amount = value.get("amount")
+                    if amount is None:
                         errors.append(
                             f"{eid}: economic.{field} status is known but amount is absent"
+                        )
+                    elif (
+                        isinstance(amount, bool)
+                        or not isinstance(amount, (int, float))
+                        or not math.isfinite(amount)
+                        or amount < 0
+                    ):
+                        errors.append(
+                            f"{eid}: economic.{field} amount must be a finite non-negative number"
                         )
 
         # Accept the deprecated legacy field during migration, but do not require it.
