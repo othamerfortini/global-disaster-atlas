@@ -11,7 +11,22 @@ from __future__ import annotations
 
 from datetime import datetime
 
-CRITICAL_IMPACTS = ("deaths", "injured", "missing", "affected", "displaced", "economic_loss")
+CRITICAL_IMPACTS = ("deaths", "injured", "missing", "affected", "displaced")
+ECONOMIC_FIELDS = ("damage", "loss", "combined", "reconstruction_needs")
+
+
+def _has_numeric_range(value: object) -> bool:
+    return isinstance(value, dict) and any(
+        value.get(key) is not None for key in ("reported", "min", "max")
+    )
+
+
+def _has_economic_amount(value: object) -> bool:
+    return (
+        isinstance(value, dict)
+        and value.get("status") != "unknown"
+        and value.get("amount") is not None
+    )
 
 
 def validate_events(events: list[dict]) -> list[str]:
@@ -29,7 +44,7 @@ def validate_events(events: list[dict]) -> list[str]:
         if start:
             try:
                 datetime.fromisoformat(start.replace("Z", "+00:00"))
-            except ValueError:
+            except (AttributeError, ValueError):
                 errors.append(f"{eid}: invalid time.start")
 
         location = event.get("location", {})
@@ -39,15 +54,36 @@ def validate_events(events: list[dict]) -> list[str]:
         if lon is not None and not -180 <= lon <= 180:
             errors.append(f"{eid}: longitude out of range")
 
+        impact = event.get("impact", {})
         for field in CRITICAL_IMPACTS:
-            value = event.get("impact", {}).get(field)
+            value = impact.get(field)
             if value is None:
                 continue
             if isinstance(value, dict) and value.get("status") != "unknown":
                 if not event.get("sources"):
                     errors.append(f"{eid}: {field} has a value but no source")
-                if value.get("reported") is None and value.get("min") is None and value.get("max") is None:
+                if not _has_numeric_range(value):
                     errors.append(f"{eid}: {field} status is known but numeric value is absent")
+
+        economic = impact.get("economic", {})
+        if isinstance(economic, dict):
+            for field in ECONOMIC_FIELDS:
+                value = economic.get(field)
+                if value is None:
+                    continue
+                if isinstance(value, dict) and value.get("status") != "unknown":
+                    if not event.get("sources"):
+                        errors.append(f"{eid}: economic.{field} has a value but no source")
+                    if value.get("amount") is None:
+                        errors.append(
+                            f"{eid}: economic.{field} status is known but amount is absent"
+                        )
+
+        # Accept the deprecated legacy field during migration, but do not require it.
+        legacy_economic = impact.get("economic_loss")
+        if legacy_economic is not None and _has_economic_amount(legacy_economic):
+            if not event.get("sources"):
+                errors.append(f"{eid}: economic_loss has a value but no source")
 
         for rel in event.get("relationships", []):
             target = rel.get("target_event_id")
