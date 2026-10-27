@@ -57,6 +57,27 @@ class EconomicImpactSchemaAlignmentTests(unittest.TestCase):
         self.assertTrue(any("economic.loss status is known but amount is absent" in error
                             for error in validate_events([event])))
 
+    def test_validator_rejects_boolean_economic_amount(self):
+        event = event_with_impact({
+            "economic": {"damage": {"amount": True, "currency": "USD", "status": "reported"}}
+        })
+        self.assertTrue(any("amount must be a finite non-negative number" in error
+                            for error in validate_events([event])))
+
+    def test_validator_rejects_negative_economic_amount(self):
+        event = event_with_impact({
+            "economic": {"loss": {"amount": -1, "currency": "EUR", "status": "reported"}}
+        })
+        self.assertTrue(any("amount must be a finite non-negative number" in error
+                            for error in validate_events([event])))
+
+    def test_validator_rejects_string_economic_amount(self):
+        event = event_with_impact({
+            "economic": {"combined": {"amount": "500", "currency": "EUR", "status": "reported"}}
+        })
+        self.assertTrue(any("amount must be a finite non-negative number" in error
+                            for error in validate_events([event])))
+
 
 if __name__ == "__main__":
     unittest.main()
