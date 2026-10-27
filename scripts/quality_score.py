@@ -2,17 +2,25 @@
 
 This score measures record quality, not disaster severity. It rewards temporal,
 spatial and provenance completeness and gives partial credit for each critical
-impact field. Unknown values receive no credit.
+impact dimension. Unknown values receive no credit.
 """
 
-CRITICAL_IMPACTS = ("deaths", "injured", "missing", "affected", "displaced", "economic_loss")
+CRITICAL_IMPACTS = ("deaths", "injured", "missing", "affected", "displaced", "economic")
 
 
 def _known_impact(value: dict | None, field: str) -> bool:
     if not isinstance(value, dict) or value.get("status") == "unknown":
         return False
-    if field == "economic_loss":
-        return value.get("amount") is not None
+    if field == "economic":
+        modern = value.get("economic", {})
+        if isinstance(modern, dict):
+            for key in ("damage", "loss", "combined", "reconstruction_needs"):
+                item = modern.get(key)
+                if isinstance(item, dict) and item.get("status") != "unknown" and item.get("amount") is not None:
+                    return True
+        # Backward compatibility while legacy records are migrated.
+        legacy = value.get("economic_loss")
+        return isinstance(legacy, dict) and legacy.get("status") != "unknown" and legacy.get("amount") is not None
     return any(value.get(k) is not None for k in ("reported", "min", "max"))
 
 
@@ -35,7 +43,9 @@ def quality_score(event: dict) -> int:
     if len(sources) >= 2:
         score += 10
 
-    known_impacts = sum(_known_impact(event.get("impact", {}).get(k), k) for k in CRITICAL_IMPACTS)
+    known_impacts = sum(
+        _known_impact(event.get("impact", {}), field) for field in CRITICAL_IMPACTS
+    )
     score += round(15 * known_impacts / len(CRITICAL_IMPACTS))
 
     relationships = event.get("relationships", [])
