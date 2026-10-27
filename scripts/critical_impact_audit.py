@@ -1,8 +1,10 @@
 """Reproducible audit for critical-impact field coverage.
 
-Coverage means a numeric scalar or a numeric range is present. Unknown/null
-values do not count. This measures data availability, not truth, severity,
-or completeness of the historical record.
+Coverage means a numeric scalar or numeric range is present. Unknown/null
+values do not count. Economic coverage recognizes the canonical
+impact.economic.{damage,loss,combined,reconstruction_needs} structure and the
+deprecated impact.economic_loss field during migration. This measures data
+availability, not truth, severity, or completeness of the historical record.
 """
 
 from __future__ import annotations
@@ -11,13 +13,8 @@ import json
 from collections import Counter, defaultdict
 from pathlib import Path
 
-FIELDS = (
-    "deaths",
-    "injured",
-    "missing",
-    "affected",
-    "displaced",
-)
+FIELDS = ("deaths", "injured", "missing", "affected", "displaced")
+ECONOMIC_FIELDS = ("damage", "loss", "combined", "reconstruction_needs")
 
 
 def numeric_impact_value(value: object) -> bool:
@@ -33,7 +30,18 @@ def numeric_impact_value(value: object) -> bool:
 def economic_value(value: object) -> bool:
     if not isinstance(value, dict):
         return False
-    return isinstance(value.get("amount"), (int, float)) and not isinstance(value.get("amount"), bool)
+    amount = value.get("amount")
+    return isinstance(amount, (int, float)) and not isinstance(amount, bool)
+
+
+def has_economic_coverage(impact: dict) -> bool:
+    economic = impact.get("economic", {})
+    if isinstance(economic, dict) and any(
+        economic_value(economic.get(field)) for field in ECONOMIC_FIELDS
+    ):
+        return True
+    # Count legacy records until the migration is complete.
+    return economic_value(impact.get("economic_loss"))
 
 
 def audit(dataset: dict) -> dict:
@@ -57,7 +65,7 @@ def audit(dataset: dict) -> dict:
             if numeric_impact_value(impact.get(field)):
                 covered[field] += 1
                 by_class[event_class][field] += 1
-        if economic_value(impact.get("economic_loss")):
+        if has_economic_coverage(impact):
             covered["economic"] += 1
             by_class[event_class]["economic"] += 1
 
@@ -90,7 +98,7 @@ def audit(dataset: dict) -> dict:
         "limitations": [
             "This audit measures field presence, not source correctness.",
             "The current proof set is not a representative global sample.",
-            "Economic coverage remains zero until economic damage/loss/reconstruction fields are normalized.",
+            "Economic coverage counts canonical damage/loss/combined/reconstruction values or legacy economic_loss values.",
             "Cascade duplicates must be resolved before aggregate casualty totals are calculated.",
         ],
     }
